@@ -3,7 +3,8 @@
 ## Tabla de contenidos
 
 - [Introducción](#introducción)
-- [Varialbes en dart](#dart-variables)
+- [Variables en dart](#dart-variables)
+- Maps y Listas
 
 ## Introducción
 
