@@ -4,7 +4,8 @@
 
 - [Introducción](#introducción)
 - [Variables en dart](#dart-variables)
-- Maps y Listas
+- [Maps](#maps)
+- [List, Iterables, Sets](#list-iterables-sets)
 
 ## Introducción
 
@@ -47,3 +48,46 @@ Si las variables no van a cambiar su valor podemos usar la palabra reservada `fi
 final String nombre = 'Juan';
 const String nombre = 'Juan';
 ```
+
+## Maps
+
+Los maps son como los objetos en javascript, se declaran con llaves `{}` y se accede a sus propiedades con el operador `.`.
+
+```dart
+Map<String, dynamic> persona = {
+  'nombre': 'Juan',
+  'edad': 23,
+  'altura': 1.80,
+  'soltero': true
+};
+
+print(persona['nombre']);
+```
+
+## List, Iterables, Sets
+
+Las listas en dart se declaran con corchetes `[]` y se accede a sus elementos con el operador `[]`.
+
+```dart
+List<String> nombres = ['Juan', 'Pedro', 'Luis'];
+
+print(nombres[0]);
+```
+
+Los iterables son objetos que se pueden recorrer, como las listas, los maps, los sets, etc. Para recorrer un iterable podemos usar un ciclo `for in`.
+
+```dart
+
+List<String> nombres = ['Juan', 'Pedro', 'Luis'];
+
+for (String nombre in nombres) {
+  print(nombre);
+}
+```
+
+Los sets son como las listas pero no pueden tener elementos repetidos, se declaran con llaves `{}`.
+
+```dart
+Set<String> nombres = {'Juan', 'Pedro', 'Luis', 'Juan'};
+```
+
