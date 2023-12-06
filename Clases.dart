@@ -1,5 +1,5 @@
 void main() {
-  final wolverine = new Hero( 'Logan', 'Regeneración' );
+  final wolverine = new Hero( name: 'Logan', power: 'Regeneración' );
 
   print( wolverine );
   print( wolverine.name );
@@ -10,11 +10,11 @@ class Hero {
   String name;
   String power;
 
-  Hero( this.name, this.power );
+  Hero( { required this.name, this.power = 'Sin poder' } );
+  // Hero( this.name, this.power );
   // Hero( String pName, String pPower ) :name = pName, power = pPower;
 
   @override String toString() {
     return 'name: ${ this.name } - power: ${ this.power }';
   }
-
 }
