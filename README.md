@@ -6,6 +6,7 @@
 - [Variables en dart](#dart-variables)
 - [Maps](#maps)
 - [List, Iterables, Sets](#list-iterables-sets)
+- [Funciones de dart](#functions)
 
 ## Introducción
 
@@ -91,3 +92,56 @@ Los sets son como las listas pero no pueden tener elementos repetidos, se declar
 Set<String> nombres = {'Juan', 'Pedro', 'Luis', 'Juan'};
 ```
 
+## Functions
+
+Las funciones en dart se declaran con la palabra reservada `void` seguido del nombre de la función y los parámetros que recibe.
+
+```dart
+void saludar(String nombre) {
+  print('Hola $nombre');
+}
+```
+
+Si la función no recibe parámetros se pueden omitir los paréntesis.
+
+```dart
+void saludar() {
+  print('Hola');
+}
+```
+
+Si la función solo tiene una línea de código se pueden omitir las llaves `{}`.
+
+```dart
+void saludar(String nombre) => print('Hola $nombre');
+```
+
+Si la función solo tiene una línea de código y retorna un valor se pueden omitir las llaves `{}` y la palabra reservada `return`.
+
+```dart
+String saludar(String nombre) => 'Hola $nombre';
+```
+
+Si la función recibe parámetros opcionales se pueden declarar con corchetes `[]`.
+
+```dart
+void saludar(String nombre, [String apellido]) {
+  print('Hola $nombre $apellido');
+}
+```
+
+Si la función recibe parámetros opcionales con valores por defecto se pueden declarar con llaves `{}`.
+
+```dart
+void saludar(String nombre, {String apellido = 'Perez'}) {
+  print('Hola $nombre $apellido');
+}
+```
+
+Si la función recibe parámetros opcionales con valores por defecto y son de tipo `List` o `Map` se pueden declarar con `...`.
+
+```dart
+void saludar(String nombre, {List<String> apellidos = const ['Perez']}) {
+  print('Hola $nombre ${apellidos[0]}');
+}
+```
