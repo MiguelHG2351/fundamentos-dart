@@ -7,6 +7,7 @@
 - [Maps](#maps)
 - [List, Iterables, Sets](#list-iterables-sets)
 - [Funciones de dart](#functions)
+- [Funciones con nombre](#functions-with-name)
 
 ## Introducción
 
@@ -143,5 +144,23 @@ Si la función recibe parámetros opcionales con valores por defecto y son de ti
 ```dart
 void saludar(String nombre, {List<String> apellidos = const ['Perez']}) {
   print('Hola $nombre ${apellidos[0]}');
+}
+```
+
+## Functions with name
+
+Las funciones con nombre se declaran con la palabra reservada `void` seguido del nombre de la función y los parámetros que recibe.
+
+```dart
+void saludar({String nombre}) {
+  print('Hola $nombre');
+}
+```
+
+Si el parámetro es requerido se puede declarar con la palabra reservada `required`.
+
+```dart
+void saludar({required String nombre}) {
+  print('Hola $nombre');
 }
 ```
