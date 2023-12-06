@@ -8,6 +8,8 @@
 - [List, Iterables, Sets](#list-iterables-sets)
 - [Funciones de dart](#functions)
 - [Funciones con nombre](#functions-with-name)
+- [Clases](#classes)
+- [Classes con multiples constructores](#classes-with-multiple-constructors)
 
 ## Introducción
 
@@ -163,4 +165,81 @@ Si el parámetro es requerido se puede declarar con la palabra reservada `requir
 void saludar({required String nombre}) {
   print('Hola $nombre');
 }
+```
+
+## Classes
+
+Las clases en dart se declaran con la palabra reservada `class` seguido del nombre de la clase y las propiedades que tiene.
+
+```dart
+class Persona {
+  String nombre;
+  int edad;
+  double altura;
+  bool soltero;
+
+  Persona({
+    required this.nombre,
+    required this.edad,
+    required this.altura,
+    required this.soltero,
+  });
+}
+```
+
+Para crear una instancia de la clase se usa la palabra reservada `new` seguido del nombre de la clase y los parámetros que recibe.
+
+```dart
+Persona persona = new Persona(
+  nombre: 'Juan',
+  edad: 23,
+  altura: 1.80,
+  soltero: true,
+);
+```
+
+Si la clase solo tiene un constructor se puede omitir la palabra reservada `new`.
+
+```dart
+Persona persona = Persona(
+  nombre: 'Juan',
+  edad: 23,
+  altura: 1.80,
+  soltero: true,
+);
+```
+
+## Classes with multiple constructors
+
+
+```dart
+class Persona {
+  String nombre;
+  int edad;
+  double altura;
+  bool soltero;
+
+  Persona({
+    required this.nombre,
+    required this.edad,
+    required this.altura,
+    required this.soltero,
+  });
+
+  Persona.fromJson(Map<String, dynamic> json) {
+    nombre = json['nombre'];
+    edad = json['edad'];
+    altura = json['altura'];
+    soltero = json['soltero'];
+  }
+}
+```
+
+```dart
+Persona persona = Persona.fromJson({
+  'nombre': 'Juan',
+  'edad': 23,
+  'altura': 1.80,
+  'soltero': true,
+});
 ```

@@ -11,6 +11,10 @@ class Hero {
   String power;
 
   Hero( { required this.name, this.power = 'Sin poder' } );
+  Hero.fromJson( Map<String, dynamic> json )
+  : name = json['name']!,
+    power = json['power']!;
+
   // Hero( this.name, this.power );
   // Hero( String pName, String pPower ) :name = pName, power = pPower;
 
